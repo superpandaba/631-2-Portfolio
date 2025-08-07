@@ -1,0 +1,390 @@
+/* 1. 全局样式 */
+
+/* 定义颜色变量 */
+:root {
+    --primary-bg-color: #E8F5E9;
+    --primary-text-color: #2E7D32;
+    --secondary-text-color: #37474F;
+    --accent-color: #4CAF50;
+}
+
+body {
+    /* 网站整体风格绿色系 */
+    font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft Yahei', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #F5F5F5;
+    color: var(--secondary-text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    /* 定义全局链接颜色和移除了下划线 */
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+h2 {
+    /* 统一所有二级标题的样式 */
+    color: var(--primary-text-color);
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    /* 一个居中的内容容器，用于限制内容宽度 */
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+
+/* 2. 响应式字体大小 */
+html {
+    font-size: calc(14px + 0.2vw);
+}
+
+/* 3. 页眉与导航 */
+header {
+    /* 定义页眉的背景、颜色和边框 */
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #A5D6A7 4px solid; /* 这个颜色可以考虑也加入变量 */
+}
+
+header h1 {
+    /* 网站主标题样式 */
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header ul {
+    /* 导航列表的样式重置 */
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+header li {
+    /* 导航列表项的行内显示和间距 */
+    display: inline;
+    margin: 0 15px;
+}
+
+header a {
+    /* 导航链接的样式 */
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    /* 导航链接鼠标悬停效果 */
+    color: #81C784;
+}
+
+/* 4. 主要内容区域 */
+main {
+    /* 为主要内容区域提供垂直内边距 */
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+
+/* 5. 首页Hero区域 */
+#hero {
+    /* 首页顶部欢迎区域的样式 */
+    text-align: center;
+    padding: 2rem 1rem;
+    background: none;
+}
+
+#hero h2 {
+    /* Hero区域主标题的字体大小 */
+    font-size: 2.5rem;
+    color: var(--primary-text-color);
+}
+
+#hero p {
+    /* Hero区域描述文字的字体大小 */
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+}
+
+/* 6. 作品集页面与卡片 */
+#portfolio {
+    /* 作品集区域的整体布局，使用flex实现内容垂直居中 */
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-container {
+    /* 项目卡片的容器，使用flex布局实现卡片横向排列和换行 */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    /* 单个项目卡片的样式 */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* 使用Flexbox确保卡片内容等高对齐 */
+    flex-direction: column; /* 让卡片内容垂直排列 */
+    justify-content: space-between; /* 使得详情按钮总在卡片底部对齐 */
+}
+
+.project-card img {
+    /* 项目卡片图片的样式 */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    /* 卡片标题的样式 */
+    padding: 10px 15px 0;
+    margin: 0;
+    color: #333;
+}
+
+.project-card p {
+    /* 卡片描述文字的样式 */
+    padding: 5px 15px;
+    flex-grow: 1;
+}
+
+.project-card a {
+    /* 卡片上“查看详情”链接的样式 */
+    display: block;
+    padding: 10px;
+    text-align: center;
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    margin: 15px;
+    border-radius: 4px;
+}
+
+.project-card:hover {
+    /* 卡片的鼠标悬停动效，轻微上浮并加深阴影 */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* 7. 精选作品 (首页) */
+#featured-projects {
+    /* 首页精选作品区域的样式 */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* 8. 项目详情页 */
+#project-detail {
+    /* 项目详情页面的容器样式，限制宽度并居中 */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center; /* 新增：使内部所有内容，包括技术栈和按钮都居中 */
+}
+
+.project-detail-image {
+    /* 项目详情页的图片样式，限制最大宽度并居中 */
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+}
+
+.project-description {
+    /* 项目描述文字的样式 */
+    text-align: center;
+}
+
+.project-tech ul {
+    display: inline-block;
+    text-align: left;
+}
+
+/* 9. 关于我页面 */
+#about, #skills {
+    /* “关于我”和“技能”部分的容器样式 */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.about-content {
+    /* “关于我”内容的布局容器 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content img {
+    /* 头像的样式 */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 圆形头像 */
+    object-fit: cover;
+}
+
+#skills ul {
+    /* 技能标签列表的样式 */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 标签居中排列 */
+    gap: 10px;
+}
+
+#skills li {
+    /* 单个技能标签的样式 */
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* 10. 联系页面 */
+#contact-form, #social-media {
+    /* 联系表单和社交媒体部分的容器样式 */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#contact-form form {
+    /* 表单内部的布局 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left; /* 表单标签左对齐，便于阅读 */
+}
+
+#contact-form input, #contact-form textarea {
+    /* 输入框和文本域的样式 */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#contact-form button {
+    /* 提交按钮的样式 */
+    align-self: center; /* 按钮在flex容器中居中 */
+}
+
+#social-media ul {
+    /* 社交媒体链接列表的样式 */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#social-media li {
+    /* 社交媒体列表项 */
+    display: inline-block;
+}
+
+#social-media a {
+    /* 社交媒体链接的样式 */
+    font-size: 16px;
+    color: #757575;
+    text-decoration: none;
+}
+
+#social-media a:hover {
+    /* 社交媒体链接的悬停效果 */
+    text-decoration: underline;
+}
+
+/* 11. 页脚 */
+footer {
+    /* 页脚的样式 */
+    text-align: center;
+    padding: 20px;
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 12. 通用CTA按钮 */
+.cta-button {
+    /* 定义一个可复用的访问按钮样式 */
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    /* CTA按钮的鼠标悬停效果 */
+    background-color: #45a049; /* 这个也可以设为变量，如 --accent-color-hover */
+}
+
+/* 13. 响应式设计 */
+@media(max-width: 768px) {
+    /* 当屏幕宽度小于768px时应用这些样式（适配平板和手机） */
+    
+    header li {
+        /* 在小屏幕上减少导航项的间距 */
+        margin: 0 10px;
+    }
+
+    .project-card {
+        /* 在小屏幕上让项目卡片占据更大宽度 */
+        width: 90%;
+    }
+
+    .about-content {
+        /* 在小屏幕上，让头像和文字垂直排列 */
+        flex-direction: column;
+    }
+}
