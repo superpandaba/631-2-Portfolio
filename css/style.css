@@ -32,7 +32,7 @@ body {
 }
 
 a {
-    /* 定义全局链接颜色和移除了下划线 */
+    /* 定义全局链接颜色和移除下划线 */
     color: var(--accent-color);
     text-decoration: none;
 }
@@ -221,7 +221,7 @@ main {
     padding: 20px;
     background: #fff;
     border-radius: 8px;
-    text-align: center; /* 新增：使内部所有内容，包括技术栈和按钮都居中 */
+    text-align: center; /* 使内部所有内容，包括技术栈和按钮都居中 */
 }
 
 .project-detail-image {
