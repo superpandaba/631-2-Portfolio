@@ -1,11 +1,21 @@
 /* 1. 全局样式 */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 /* 定义颜色变量 */
 :root {
     --primary-bg-color: #E8F5E9;
     --primary-text-color: #2E7D32;
     --secondary-text-color: #37474F;
+    --header-border-color: #A5D6A7;
     --accent-color: #4CAF50;
+    --accent-color-hover: #45a049;
+    --card-bg-color: #ffffff;
+    --default-transition: all 0.3s ease;
 }
 
 body {
@@ -56,7 +66,7 @@ header {
     color: var(--primary-text-color);
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #A5D6A7 4px solid; /* 这个颜色可以考虑也加入变量 */
+    border-bottom: var(--header-border-color) 4px solid;
 }
 
 header h1 {
@@ -90,12 +100,12 @@ header a {
     color: var(--primary-text-color);
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s ease;
+    transition: color var(--default-transition);
 }
 
 header a:hover {
     /* 导航链接鼠标悬停效果 */
-    color: #81C784;
+    color: var(--accent-color);
 }
 
 /* 4. 主要内容区域 */
@@ -147,13 +157,13 @@ main {
 
 .project-card {
     /* 单个项目卡片的样式 */
-    background: #ffffff;
+    background: var(--card-bg-color);
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     width: 300px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--default-transition), box-shadow var(--default-transition);
     display: flex; /* 使用Flexbox确保卡片内容等高对齐 */
     flex-direction: column; /* 让卡片内容垂直排列 */
     justify-content: space-between; /* 使得详情按钮总在卡片底部对齐 */
@@ -304,7 +314,6 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
 #contact-form button {
@@ -346,7 +355,6 @@ footer {
     background: var(--primary-bg-color);
     color: var(--primary-text-color);
     width: 100%;
-    box-sizing: border-box;
 }
 
 /* 12. 通用CTA按钮 */
@@ -361,12 +369,12 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background-color var(--default-transition);
 }
 
 .cta-button:hover {
     /* CTA按钮的鼠标悬停效果 */
-    background-color: #45a049; /* 这个也可以设为变量，如 --accent-color-hover */
+    background-color: var(--accent-color-hover);
 }
 
 /* 13. 响应式设计 */
