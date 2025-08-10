@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header>
-        <h1>Yuhang作品集</h1> 
+        <h1>Yuhang作品集</h1>
         <nav>
             <ul>
                 <li><a href="index.html">主页</a></li>
@@ -20,26 +19,35 @@
         </nav>
     </header>
 
+    <!-- 主要内容：本页核心，包含联系表单和社交媒体链接 -->
     <main>
+        <!-- 联系表单区域 -->
         <section id="contact-form">
             <h2>给我留言</h2>
             <p>如果你有任何问题或合作意向，请随时填写下表与我联系。</p>
+            <!-- <form> 标签用于创建HTML表单，以收集用户输入 -->
             <form>
+                <!-- <label> 标签为输入控件提供标注 -->
                 <label for="name">姓名:</label>
+                <!-- required 属性规定该输入字段为必填项 -->
                 <input type="text" id="name" name="name" required>
 
                 <label for="email">邮箱:</label>
+                <!-- type="email" 让浏览器对输入的邮箱格式进行基本验证 -->
                 <input type="email" id="email" name="email" required>
 
                 <label for="message">内容:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
+                <!-- type="submit" 的按钮会触发表单提交事件 -->
                 <button type="submit">发送消息</button>
             </form>
         </section>
+        <!-- 社交媒体链接区域 -->
         <section id="social-media">
-            <h2>社交媒体</h2
+            <h2>社交媒体</h2>
             <ul>
+                <!-- target="_blank" 链接在新标签页中打开，不会中断用户当前浏览 -->
                 <li><a href="https://github.com/" target="_blank">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
                 <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>

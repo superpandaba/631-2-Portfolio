@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- 页眉区域：网站的顶部，包含标题和导航 -->
     <header>
-        <h1>Yuhang作品集</h1>
+        <h1>Yuhang作品集</h1> <!-- 网站的主标题 -->
+        <!-- 导航栏：使用 <nav> 语义化标签，包裹主要的导航链接 -->
         <nav>
             <ul>
                 <li><a href="index.html">主页</a></li>
@@ -21,36 +20,40 @@
         </nav>
     </header>
 
-    <!-- 主要内容区域：页面的核心部分 -->
+    <!-- 主要内容区域：使用 <main> 语义化标签，包裹页面的核心、独立内容 -->
     <main>
+        <!-- 欢迎区块：使用 <section> 定义一个独立的逻辑区域 -->
         <section id="hero">
             <h2>欢迎来到我的世界</h2>
             <p>在这里，你可以看到我的项目、技能和热情所在。</p>
-            
         </section>
 
+        <!-- 精选作品区块 -->
         <section id="featured-projects">
             <h2>精选作品</h2>
-            <div class="projects-container">
-                <!-- 个人博客网站 -->
+            <div class="projects-container"> <!-- 作品容器，通过CSS进行统一布局 -->
+                <!-- 作品卡片1：个人博客网站 -->
                 <div class="project-card">
-                    <img src="images/project-1.jpg" alt="个人博客网站截图">
+                    <img src="images/project-1.jpg" alt="个人博客网站截图">     
                     <h3>个人博客网站</h3>
-                    <p>一个使用现代技术栈构建，用于内容创作与分享的平台。</p>
-                    <a href="project-detail-1.html">查看详情</a>
+                    <p>
+                        一个从零到一构建的现代化个人博客平台，实现了文章的发布、浏览与管理等核心功能，并采用响应式设计，适配多端设备。
+                    </p>
+                    <a href="project-detail-1.html">查看详情</a> <!-- 链接到该项目的详细介绍页面 -->
                 </div>
-                 <!-- 咖啡馆网站 -->
+                 <!-- 作品卡片2：咖啡馆网站 -->
                 <div class="project-card">
                     <img src="images/project-2.jpg" alt="咖啡馆网站截图">
                     <h3>咖啡馆网站</h3>
-                    <p>一个为本地咖啡馆设计的精美响应式网站，包含菜单、品牌故事和在线预订功能。</p>
+                    <p>
+                        一个为精品咖啡馆设计的品牌展示网站，注重视觉传达与用户体验，并采用“移动优先”原则实现全平台响应式布局。
+                    </p>
                     <a href="project-detail-2.html">查看详情</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 页脚区域：网站的底部 -->
     <footer>
         <p>&copy; 2025 Yuhang. 保留所有权利。</p>
     </footer>
